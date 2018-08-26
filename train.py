@@ -70,6 +70,9 @@ if args.data_set == 'cifar':
 elif args.data_set == 'imagenet':
     import data.imagenet_data as imagenet_data
     DataLoader = imagenet_data.DataLoader
+elif args.data_set == 'mydata':
+    import data.my_data as mydata
+    DataLoader = mydata.DataLoader
 else:
     raise("unsupported dataset")
 train_data = DataLoader(args.data_dir, 'train', args.batch_size * args.nr_gpu, rng=rng, shuffle=True, return_labels=args.class_conditional)
