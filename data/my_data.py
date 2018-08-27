@@ -91,7 +91,6 @@ class DataLoader(object):
         self.rng = np.random.RandomState(1) if rng is None else rng
 
     def get_observation_size(self):
-        print('DATA', self.data.shape)
         return self.data.shape[1:]
 
     def get_num_labels(self):
